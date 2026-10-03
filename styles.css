@@ -29,6 +29,16 @@ img{
     height: auto;
     width: auto;
     display: block;
+    margin: auto;
+}
+.p-top{
+    padding-top: 10rem;
+}
+.text-center{
+    text-align: center;
+}
+.mt-4{
+    margin-top: 4rem;
 }
 /* --------------Header Styling------------------- */
 a{
@@ -39,6 +49,7 @@ a{
 .flex{
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
 }
 .navList{
     gap:3rem
@@ -105,18 +116,29 @@ list-style: none;
 
 
 .hero-section{
-    min-height: calc(100vh-14vh);
+    min-height: calc(100vh - 14vh);
+    flex-wrap: wrap;
+    gap: 2rem;
     /* background-color: gold; */
 }
 .hero-section span{
     color: var(--gold-finger);
 }
-.content,.image-container{
+.content,.image-container,.service-card{
     flex: 1;
     flex-basis: 300px;
 }
+.service-list{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.service-card{
+    flex: 1 1 250px;
+    max-width: 360px;
+}
 h1{
-    font-size: 5.6vw;
+    font-size: 4.5rem;
     color: var(--lead);
 
 }
@@ -150,6 +172,26 @@ p{
 }
 
 
+h5{
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    color: var(--gold-finger);
+    text-transform: uppercase;
+}
+h2{
+    font-size: 3.7rem;
+    text-transform: capitalize;
+    color: var(--lead);
+}
+h3{
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--lead);
+}
+.service-card h3{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
 
 
 
@@ -284,7 +326,20 @@ p{
 
     /* -------------Hero Styling----------------------------- */
     h1{
-        font-size: 3.6rem;
+        font-size: 3.2rem;
+    }
+    h2{
+        font-size: 2.4rem;
+    }
+    .hero-section{
+        gap: 2rem;
+    }
+    .hero-section .content,
+    .hero-section .image-container{
+        flex-basis: 100%;
+    }
+    .hero-section .content > .flex{
+        flex-wrap: wrap;
     }
     .content{
         padding-top: 3rem;
