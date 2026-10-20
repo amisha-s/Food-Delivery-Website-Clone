@@ -15,6 +15,7 @@ closeButton.addEventListener("click", () => {
 
 let productList = [];
 let cartProduct=[];
+let value=1;
 
 const showCards = () => {
   productList.forEach((product) => {
@@ -47,7 +48,7 @@ const addToCart=(product)=>{
   }
   cartProduct.push(product)
 
-
+ let price=parseFloat(product.price.replace('$',''));
 
 
   const cartItem=document.createElement('div');
@@ -61,12 +62,37 @@ const addToCart=(product)=>{
                 <h4 class="item-total">${product.price}</h4>
               </div>
               <div class="flex">
-                <a href="#" class="quantity-btn"><i class="fa-solid fa-minus"></i></a>
-                <h4 class="quantity-value">1</h4>
-                <a href="#" class="quantity-btn"><i class="fa-solid fa-plus"></i></a>
+                <a href="#" class="quantity-btn minus"><i class="fa-solid fa-minus"></i></a>
+                <h4 class="quantity-value">${value}</h4>
+                <a href="#" class="quantity-btn plus"><i class="fa-solid fa-plus"></i></a>
               </div>
             </div>`
   cartList.appendChild(cartItem);
+
+  const minusValue=cartItem.querySelector('.minus');
+  const plusValue=cartItem.querySelector('.plus');
+  const quantityValue=cartItem.querySelector('.quantity-value')
+  const itemTotal=cartItem.querySelector('.item-total');
+
+  minusValue.addEventListener('click',(e)=>{
+    
+    if(value>1){
+       e.preventDefault();
+    value--;
+    quantityValue.textContent=value;
+    itemTotal.textContent=`$${(price*value).toFixed(2)}`
+    }
+    else{
+      cartItem.remove();
+      cartProduct=cartProduct.filter(item=>item.id != product.id)
+    }
+  })
+  plusValue.addEventListener('click',(e)=>{
+    e.preventDefault();
+    value++;
+    quantityValue.textContent=value;
+    itemTotal.textContent=`$${(price*value).toFixed(2)}`
+  })
 }
 
 const init = () => {
