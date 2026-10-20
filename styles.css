@@ -578,15 +578,15 @@ input[type="email"]:focus{
 .card-tab-active{
     inset: 0 0 0 auto;
 }
-.card-list{
+.cart-list{
     flex:1;
     width: 100%;
     overflow: auto;
 }
-.card-list >.item:nth-child(even){
+.cart-list > .item:nth-child(even){
 background-color: var(--eye-ball);
 }
-.card-list::-webkit-scrollbar
+.cart-list::-webkit-scrollbar
 {
 width: 0;
 }
