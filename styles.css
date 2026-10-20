@@ -573,6 +573,7 @@ input[type="email"]:focus{
     justify-content: center;
     align-items: center;
     z-index: 99;
+    transition: .3s ease-in-out;
 }
 .card-tab-active{
     inset: 0 0 0 auto;
