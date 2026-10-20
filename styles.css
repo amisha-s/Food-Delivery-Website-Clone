@@ -231,10 +231,35 @@ h3{
 .mt-half{
     margin: 0.5rem;
 }
+.footer-wrapper .social-links{
+    background-color: var(--pure-white);
+    
+}
+.footer-wrapper .social-links:hover{
+    background-color: var(--lead);
+    color: var(--pure-white);
+    
+}
+.footer-wrapper:nth-child(1){
+    flex: 2;
+    flex-basis: 300px;
+}
+.footer-list li  {
+    list-style: none;
+}
+.mt-one-half{
+    margin-bottom: 1.5rem;
+}
+.footer-link{
+    color: gray
+}
+.footer-link:hover{
+    color: var(--lead);
+}
 
-
-
-
+.footer-container .flex{
+    align-items: flex-start;
+}
 
 
 
@@ -399,6 +424,22 @@ h3{
     .order-card{
         flex-basis: calc((100% - 1rem) / 2);
     }
+    .footer-container > .wrapper{
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .footer-container > .wrapper > .footer-wrapper:first-child{
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+    .footer-container > .wrapper > .footer-list.footer-wrapper{
+        flex: 1 1 calc(50% - 1rem);
+        min-width: 0;
+        padding: 0;
+    }
+    .footer-container h3{
+        font-size: 1.5rem;
+    }
 }
     
 
@@ -511,4 +552,94 @@ input[type="email"]{
 }
 input[type="email"]:focus{
     outline: none;
+}
+.footer-container{
+    margin-top: 10rem;
+    padding-block: 4rem;
+    background-color: var(--hint-yellow);
+}
+.footer-wrapper{
+    flex:1;
+    flex-basis: 150px;
+}
+.card-tab{
+    background-color: var(--hint-yellow);
+    position: fixed;
+    inset: 0 -500px 0 auto;
+    width:25rem;
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+.card-tab-active{
+    inset: 0 0 0 auto;
+}
+.card-list{
+    flex:1;
+    width: 100%;
+    overflow: auto;
+}
+.card-list >.item:nth-child(even){
+background-color: var(--eye-ball);
+}
+.card-list::-webkit-scrollbar
+{
+width: 0;
+}
+.total-container{
+    width:100%;
+    background: var(--gold-finger);
+    text-align: center;
+    margin-block: 1rem;
+    padding-block:1rem
+
+
+
+}
+.total-container h4{
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.btn-container .btn{
+    background-color: var(--lead);
+   
+}
+.btn-container{
+    display: flex;
+    gap:2rem
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .7rem 1rem;
+}
+.item .item-image img{
+    width: 5rem;
+}
+.item h4{
+    font-size: 1.3rem;
+
+}
+.item-total{
+    font-weight: 400;
+    margin-top: .3rem;
+}
+.quantity-btn{
+    background-color: var(--lead);
+    color: var(--pure-white);
+    width:1.7rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    line-height: 1.7rem;
+}
+.quantity-value{
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-inline: .6rem;
 }
