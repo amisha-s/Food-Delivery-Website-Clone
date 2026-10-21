@@ -3,6 +3,7 @@ const cardTab = document.querySelector(".card-tab");
 const closeButton = document.querySelector(".close-btn");
 const cardList = document.querySelector(".card-list");
 const cartList=document.querySelector(".cart-list");
+const cartTotal = document.querySelector(".card-total");
 
 cartIcon.addEventListener("click", (event) => {
   event.preventDefault();
@@ -16,6 +17,18 @@ closeButton.addEventListener("click", () => {
 let productList = [];
 let cartProduct=[];
 let value=1;
+
+const updateTotal=()=>{
+let totalPrice=0;
+document.querySelectorAll('.item').forEach(item=>{
+ const total=parseFloat(item.querySelector('.item-total').textContent.replace('$',''));
+ totalPrice += total;
+})
+cartTotal.textContent=`$${totalPrice.toFixed(2)}`
+}
+
+
+
 
 const showCards = () => {
   productList.forEach((product) => {
@@ -68,6 +81,7 @@ const addToCart=(product)=>{
               </div>
             </div>`
   cartList.appendChild(cartItem);
+  updateTotal();
 
   const minusValue=cartItem.querySelector('.minus');
   const plusValue=cartItem.querySelector('.plus');
@@ -81,10 +95,12 @@ const addToCart=(product)=>{
     value--;
     quantityValue.textContent=value;
     itemTotal.textContent=`$${(price*value).toFixed(2)}`
+    updateTotal();
     }
     else{
       cartItem.remove();
       cartProduct=cartProduct.filter(item=>item.id != product.id)
+      updateTotal()
     }
   })
   plusValue.addEventListener('click',(e)=>{
@@ -92,6 +108,7 @@ const addToCart=(product)=>{
     value++;
     quantityValue.textContent=value;
     itemTotal.textContent=`$${(price*value).toFixed(2)}`
+    updateTotal()
   })
 }
 
