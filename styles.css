@@ -379,7 +379,7 @@ h3{
         transition: all .5s ease-in-out;
         
     }
-    .mobile-menu-active{
+     .mobile-menu-active{
        left: 50%;
 
     }

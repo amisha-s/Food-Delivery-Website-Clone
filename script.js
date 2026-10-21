@@ -4,6 +4,10 @@ const closeButton = document.querySelector(".close-btn");
 const cardList = document.querySelector(".card-list");
 const cartList=document.querySelector(".cart-list");
 const cartTotal = document.querySelector(".card-total");
+const cartValue=document.querySelector('.cart-value');
+const hamburger=document.querySelector('.hamburger');
+const mobileMenu=document.querySelector('.mobile-menu');
+const bars=document.querySelector('.fa-bars');
 
 cartIcon.addEventListener("click", (event) => {
   event.preventDefault();
@@ -14,17 +18,30 @@ closeButton.addEventListener("click", () => {
   cardTab.classList.remove("card-tab-active");
 });
 
+hamburger.addEventListener('click',(event)=>{
+  event.preventDefault();
+  mobileMenu.classList.toggle('mobile-menu-active');
+})
+hamburger.addEventListener('click',(event)=>{
+  event.preventDefault();
+  bars.classList.toggle('fa-xmark');
+})
+
 let productList = [];
 let cartProduct=[];
 let value=1;
 
 const updateTotal=()=>{
 let totalPrice=0;
+let totalQuantity=0
 document.querySelectorAll('.item').forEach(item=>{
+ const totalValue=parseInt(item.querySelector('.quantity-value').textContent) 
  const total=parseFloat(item.querySelector('.item-total').textContent.replace('$',''));
  totalPrice += total;
+ totalQuantity +=totalValue;
 })
-cartTotal.textContent=`$${totalPrice.toFixed(2)}`
+cartTotal.textContent=`$${totalPrice.toFixed(2)}`;
+cartValue.textContent=`${totalQuantity}`;
 }
 
 
