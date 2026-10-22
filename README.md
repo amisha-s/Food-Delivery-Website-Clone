@@ -45,3 +45,7 @@ Then open `http://localhost:5501` in your browser. The command may download `htt
 - `scriptPractiseSelf.js` - alternate practice script; not loaded by `index.html`
 - `products.json` - product names, prices, IDs, and image paths
 - `images/` - food, profile, and app illustrations
+
+## Acknowledgment
+
+I built this website as a learning project while following [this YouTube tutorial](https://www.youtube.com/watch?v=RUG8yFJKVco&t=14374s).
